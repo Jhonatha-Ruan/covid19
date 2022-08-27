@@ -1,0 +1,181 @@
+<div class="container">
+  <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+      <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+      <span class="fs-4">Covid19 <i class="bi bi-virus"></i></span>
+    </a>
+
+    
+    <img class="logo-img" src="https://www.pitang.com/image/layout_set_logo?img_id=64051&t=1648734708816" width="130" height="40">
+    <img class="logo-img" src="https://agil.facepe.br/imagens/logo_facepe.png" width="120" height="40">
+    <img class="logo-img" src="https://seeklogo.com/images/E/ete-logo-C00FB6F54C-seeklogo.com.png" width="100" height="40">
+  
+  </header>
+</div>
+
+
+<div class="container">
+  <div class="row g-3 my-2">
+      <div class="col-md-3">
+          <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
+              <div>
+                  <h3 class="fs-2">{{states[27].cases}}</h3>
+                  <p class="fs-5">Casos</p>
+              </div>
+              <i class="bi bi-virus2 fs-2 primary-text border rounded-full secondary-bg p-3 px-4"></i>
+          </div>
+      </div>
+
+      <div class="col-md-3">
+          <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
+              <div>
+                  <h3 class="fs-2">{{states[27].deaths}}</h3>
+                  <p class="fs-5">Obitos</p>
+              </div>
+              <img class="fs-2 primary-text border rounded-full secondary-bg p-3 py-4 px-4" src="../../../assets/img/cemiterio.png" alt="obitos">
+          </div>
+      </div>
+
+      <div class="col-md-3">
+          <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
+              <div>
+                  <h3 class="fs-2">{{states[27].recovered}}</h3>
+                  <p class="fs-5">Recuperados</p>
+              </div>
+              <i class="bi bi-bandaid fs-2 primary-text border rounded-full secondary-bg p-3 px-4"></i>
+          </div>
+      </div>
+
+      <div class="col-md-3">
+          <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
+              <div>
+                  <h3 class="fs-2">{{states[27].vaccinated}}</h3>
+                  <p class="fs-5">Vacinação</p>
+              </div>
+              <img class="fs-2 primary-text border rounded-full secondary-bg p-3 py-4 px-4" src="../../../assets/img/contorno-de-seringa.png" alt="">
+          </div>
+      </div>
+  </div>
+
+
+  <!-- <div style="max-height: 250px; overflow: scroll;">
+    Estados
+    <ul>
+      <li *ngFor="let item of states">{{item | json}}</li>
+    </ul>
+  </div> -->
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <ng-template [ngIf]="abrir">
+          <app-bar-chart [data]="states"></app-bar-chart>
+        </ng-template>
+        
+      </div>
+      <div class="col-md-6">
+        <ng-template [ngIf]="abrir">
+          <app-chart-pie [data]="states"></app-chart-pie>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+
+  
+
+
+  <div class="container">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Estados</th>
+          <th>Casos</th>
+          <th>Novos Casos</th>
+          <th>Óbitos</th>
+          <th>Novos Óbitos</th>
+          <th>Recuperados</th>
+          <th>1ª Dose</th>
+          <th>2ª Dose</th>
+          <th>3ª Dose</th>
+          <th>Única</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let state of states">
+          <td>{{state.state}}</td>
+          <td>{{state.cases}}</td>
+          <td>{{state.newCases}}</td>
+          <td>{{state.deaths}}</td>
+          <td>{{state.newDeaths}}</td>
+          <td>{{state.recovered}}</td>
+          <td>{{state.vaccinated}}</td>
+          <td>{{state.vaccinated_second}}</td>
+          <td>{{state.vaccinated_third}}</td>
+          <td>{{state.vaccinated_single}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+    <!-- <table>
+      <thead>
+        <tr>
+          <th>data</th>
+          <th>cidade</th>
+          <th>obitos</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let city of cities">
+          <td>{{city.date}}</td>
+          <td>{{city.name}}</td>
+          <td>{{city.deaths}}</td>
+        </tr>
+      </tbody>
+    </table> -->
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container">
+  <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+    <p class="col-md-4 mb-0 ">Grupo: Jhonatha, Douglas e Juan</p>
+
+    <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+      <img src="../../../assets/img/covid-19.png" alt="">
+    </a>
+
+    <ul class="nav col-md-4 justify-content-end">
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-dark">Topo</a></li>
+    </ul>
+  </footer>
+</div>
