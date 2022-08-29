@@ -2,7 +2,7 @@
   <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
     <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
       <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
-      <span class="fs-4">Covid19 <i class="bi bi-virus"></i></span>
+      <span class="fs-3 ">Covid19 <i class="bi bi-virus"></i></span>
     </a>
 
     
@@ -17,42 +17,42 @@
 <div class="container">
   <div class="row g-3 my-2">
       <div class="col-md-3">
-          <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
+          <div id="card1" class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
               <div>
-                  <h3 class="fs-2">{{states[27].cases}}</h3>
+                  <h3 class="fs-2">{{casos}}</h3>
                   <p class="fs-5">Casos</p>
               </div>
-              <i class="bi bi-virus2 fs-2 primary-text border rounded-full secondary-bg p-3 px-4"></i>
+              <i class="bi bi-virus2 fs-2 primary-text secondary-bg p-3 px-4"></i>
           </div>
       </div>
 
       <div class="col-md-3">
-          <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
+          <div id="card2" class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
               <div>
-                  <h3 class="fs-2">{{states[27].deaths}}</h3>
-                  <p class="fs-5">Obitos</p>
+                  <h3 class="fs-2">{{obitos}}</h3>
+                  <p class="fs-5">Óbitos</p>
               </div>
-              <img class="fs-2 primary-text border rounded-full secondary-bg p-3 py-4 px-4" src="../../../assets/img/cemiterio.png" alt="obitos">
+              <img class="fs-2 primary-text secondary-bg p-3 py-4 px-4" src="../../../assets/img/cemiterio.png" alt="obitos">
           </div>
       </div>
 
       <div class="col-md-3">
-          <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
+          <div id="card3" class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
               <div>
-                  <h3 class="fs-2">{{states[27].recovered}}</h3>
+                  <h3 class="fs-2">{{recuperados}}</h3>
                   <p class="fs-5">Recuperados</p>
               </div>
-              <i class="bi bi-bandaid fs-2 primary-text border rounded-full secondary-bg p-3 px-4"></i>
+              <i class="bi bi-bandaid fs-2 primary-text secondary-bg p-3 px-4"></i>
           </div>
       </div>
 
       <div class="col-md-3">
-          <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
+          <div id="card4" class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
               <div>
-                  <h3 class="fs-2">{{states[27].vaccinated}}</h3>
+                  <h3 class="fs-2">{{vac_tot}}</h3>
                   <p class="fs-5">Vacinação</p>
               </div>
-              <img class="fs-2 primary-text border rounded-full secondary-bg p-3 py-4 px-4" src="../../../assets/img/contorno-de-seringa.png" alt="">
+              <img class="fs-2 primary-text secondary-bg p-3 py-4 px-4" src="../../../assets/img/contorno-de-seringa.png" alt="">
           </div>
       </div>
   </div>
@@ -65,7 +65,7 @@
     </ul>
   </div> -->
 
-  <div class="container">
+  <div class="container mt-5">
     <div class="row">
       <div class="col-md-6">
         <ng-template [ngIf]="abrir">
@@ -77,6 +77,10 @@
         <ng-template [ngIf]="abrir">
           <app-chart-pie [data]="states"></app-chart-pie>
         </ng-template>
+
+        <ng-template [ngIf]="abrir">
+          <app-area-chart [data]="states"></app-area-chart>
+        </ng-template>
       </div>
     </div>
   </div>
@@ -84,9 +88,9 @@
   
 
 
-  <div class="container">
+  <div class="container mt-5">
     <table class="table table-striped">
-      <thead>
+      <thead class="bg-dark text-white">
         <tr>
           <th>Estados</th>
           <th>Casos</th>
@@ -134,48 +138,16 @@
       </tbody>
     </table> -->
 
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="container">
+<div class="container fw-bold">
   <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
     <p class="col-md-4 mb-0 ">Grupo: Jhonatha, Douglas e Juan</p>
 
-    <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
-      <img src="../../../assets/img/covid-19.png" alt="">
+    <a id="fonte" href="https://github.com/wcota/covid19br" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+      <p>Fonte: WCota/covid19br <img src="../../../assets/img/covid-19.png" alt=""></p>  
     </a>
-
+ 
     <ul class="nav col-md-4 justify-content-end">
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-dark">Topo</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-dark"><i class="bi bi-caret-up"></i> Topo</a></li>
     </ul>
   </footer>
 </div>

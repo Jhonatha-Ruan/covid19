@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { HomeComponent } from './home.component';
 import { ChartPieComponent } from './chart-pie/chart-pie.component';
 import { BarChartComponent } from './bar-chart/bar-chart.component';
+import { AreaChartComponent } from './area-chart/area-chart.component';
 
 
 
@@ -10,7 +11,8 @@ import { BarChartComponent } from './bar-chart/bar-chart.component';
   declarations: [
     HomeComponent,
     ChartPieComponent,
-    BarChartComponent
+    BarChartComponent,
+    AreaChartComponent
   ],
   imports: [
     CommonModule

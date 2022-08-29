@@ -21,6 +21,11 @@ export class HomeComponent implements OnInit {
   public dateSelectCities: Array<ICovidState> = [];
   public abrir: boolean = false;
 
+  public vac_tot?: any;
+  public casos?: any;
+  public obitos?: any;
+  public recuperados?: any;
+
   constructor(
     private citiesService: CovidCitiesService,
     private statesService: CovidStatesService
@@ -30,7 +35,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.getDataStates();
     this.getDataCities();
-    setInterval(() => this.abrir = true, 4000);
+    setInterval(() => this.abrir = true, 5000);
     
   }
 
@@ -96,6 +101,17 @@ export class HomeComponent implements OnInit {
       // this.states.splice(0, 1);
       this.states.sort((item1, item2) => item2.date.localeCompare(item1.date));
       // this.states.splice(this.states.length - 1, 1);
+      this.vac_tot = Number(this.states[27].vaccinated) + Number(this.states[27].vaccinated_second) + Number(this.states[27].vaccinated_third) + Number(this.states[27].vaccinated_single)
+      this.vac_tot = new Intl.NumberFormat('pt-BR').format(this.vac_tot);
+
+      this.casos = this.states[27].cases
+      this.casos = new Intl.NumberFormat('pt-BR').format(this.casos);
+
+      this.obitos = this.states[27].deaths
+      this.obitos = new Intl.NumberFormat('pt-BR').format(this.obitos);
+
+      this.recuperados = this.states[27].recovered
+      this.recuperados = new Intl.NumberFormat('pt-BR').format(this.recuperados);
     });
     this.getPerDate();
   }
