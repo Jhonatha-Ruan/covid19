@@ -22,7 +22,7 @@
                   <h3 class="fs-2">{{casos}}</h3>
                   <p class="fs-5">Casos</p>
               </div>
-              <i class="bi bi-virus2 fs-2 primary-text secondary-bg p-3 px-4"></i>
+              <img class="fs-2 primary-text secondary-bg p-3 py-4 px-4" src="../../../assets/img/covid.png" alt="">
           </div>
       </div>
 
@@ -89,8 +89,8 @@
 
 
   <div class="container mt-5">
-    <table class="table table-striped">
-      <thead class="bg-dark text-white">
+    <table class="sticky-top table table-striped table-bordered border-dark">
+      <thead class="sticky-top bg-dark text-white">
         <tr>
           <th>Estados</th>
           <th>Casos</th>
@@ -108,39 +108,41 @@
       <tbody>
         <tr *ngFor="let state of states">
           <td>{{state.state}}</td>
-          <td>{{state.cases}}</td>
-          <td>{{state.newCases}}</td>
-          <td>{{state.deaths}}</td>
-          <td>{{state.newDeaths}}</td>
-          <td>{{state.recovered}}</td>
-          <td>{{state.vaccinated}}</td>
-          <td>{{state.vaccinated_second}}</td>
-          <td>{{state.vaccinated_third}}</td>
-          <td>{{state.vaccinated_single}}</td>
+          <td>{{ brNumber(state.cases) }}</td>
+          <td>{{ brNumber(state.newCases) }}</td>
+          <td>{{ brNumber(state.deaths) }}</td>
+          <td>{{ brNumber(state.newDeaths) }}</td>
+          <td>{{ brNumber(state.recovered) }}</td>
+          <td>{{ brNumber(state.vaccinated) }}</td>
+          <td>{{ brNumber(state.vaccinated_second) }}</td>
+          <td>{{ brNumber(state.vaccinated_third) }}</td>
+          <td>{{ brNumber(state.vaccinated_single) }}</td>
         </tr>
       </tbody>
     </table>
   </div>
-    <!-- <table>
-      <thead>
-        <tr>
-          <th>data</th>
-          <th>cidade</th>
-          <th>obitos</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let city of cities">
-          <td>{{city.date}}</td>
-          <td>{{city.name}}</td>
-          <td>{{city.deaths}}</td>
-        </tr>
-      </tbody>
-    </table> -->
+
+
+  <!-- <table>
+    <thead>
+      <tr>
+        <th>data</th>
+        <th>cidade</th>
+        <th>obitos</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let city of cities">
+        <td>{{city.date}}</td>
+        <td>{{city.name}}</td>
+        <td>{{city.deaths}}</td>
+      </tr>
+    </tbody>
+  </table> -->
 
 <div class="container fw-bold">
   <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-    <p class="col-md-4 mb-0 ">Grupo: Jhonatha, Douglas e Juan</p>
+    <p class="col-md-4 mb-0 ">Grupo: <a class="link-dark text-decoration-none" href="https://github.com/Jhonatha-Ruan">Jhonatha</a>, <a class="link-dark text-decoration-none" href="https://github.com/DouglasWillamysEs">Douglas</a> e <a class="link-dark text-decoration-none" href="">Juan</a></p>
 
     <a id="fonte" href="https://github.com/wcota/covid19br" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
       <p>Fonte: WCota/covid19br <img src="../../../assets/img/covid-19.png" alt=""></p>  

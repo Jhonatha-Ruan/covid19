@@ -112,8 +112,14 @@ export class HomeComponent implements OnInit {
 
       this.recuperados = this.states[27].recovered
       this.recuperados = new Intl.NumberFormat('pt-BR').format(this.recuperados);
+      
     });
     this.getPerDate();
+  }
+
+  //formata os numeros para o estilo brasileiro
+  public brNumber(value: number): string {
+    return new Intl.NumberFormat('pt-BR').format(value);
   }
 
   private getPerDate(): void {
