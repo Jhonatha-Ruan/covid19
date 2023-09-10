@@ -64,20 +64,21 @@ export class HomeComponent implements OnInit {
       const list = data.split('\n');
       list.forEach((e: any) => {
         const item = e.split(',');
-        var hoje = new Date();
-        var ontem = new Date(hoje.getTime());
-        ontem.setDate(hoje.getDate() - 1);
-        var dd: any = ontem.getDate();
-        var mm: any = ontem.getMonth() + 1;
-        var yyyy = ontem.getFullYear();
-        if (dd < 10) {
-          dd = '0' + dd;
-        }
-        if (mm < 10) {
-          mm = '0' + mm;
-        }
-        var data_ok = yyyy + '-' + mm + '-' + dd;
-        if (item[1] == data_ok) {
+        // var hoje = new Date();
+        // var ontem = new Date(hoje.getTime());
+        // ontem.setDate(hoje.getDate() - 1);
+        // var dd: any = ontem.getDate();
+        // var mm: any = ontem.getMonth() + 1;
+        // // var yyyy = ontem.getFullYear();
+        // var yyyy = 2022;
+        // if (dd < 10) {
+        //   dd = '0' + dd;
+        // }
+        // if (mm < 10) {
+        //   mm = '0' + mm;
+        // }
+        let ultimaAtualizacao = '2023-03-18';
+        if (item[1] == ultimaAtualizacao) {
           this.states.push({
             date: item[1],
             country: item[2],
